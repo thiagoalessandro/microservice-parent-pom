@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>br.com.intelector.microservice</groupId>
+    <artifactId>microservice-parent-pom</artifactId>
+    <version>1.0.0</version>
+    <name>Microservice Parent POM</name>
+    <packaging>pom</packaging>
+
+    <developers>
+        <developer>
+            <name>Thiago Alessandro</name>
+            <email>thiago.alessandro.farias@totvs.com.br</email>
+        </developer>
+    </developers>
+
+    <!--<distributionManagement>
+        <repository>
+            <id>maven-repository</id>
+            <url>${maven.repository}</url>
+        </repository>
+    </distributionManagement>-->
+
+    <properties>
+        <maven.repository>file:///home/thiago/.m2/repository/</maven.repository>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <name>${project.name}</name>
+        <version>${project.version}</version>
+        <spring-boot-starter-parent.version>2.2.4.RELEASE</spring-boot-starter-parent.version>
+        <microservice-bom.version>1.0.0</microservice-bom.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>${spring-boot-starter-parent.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>br.com.intelector.microservice</groupId>
+                <artifactId>microservice-bom</artifactId>
+                <version>${microservice-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
